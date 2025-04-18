@@ -45,6 +45,7 @@ Follow the prompt:
 Enter GitHub organization name: my-org
 Enter target domain (e.g. example.com): example.com
 
+```
 📦 Output Format
 [!] Secret Found: AWS Access Key
     ↪ Repo: billing-api
@@ -52,7 +53,7 @@ Enter target domain (e.g. example.com): example.com
     ↪ Line: 42
     ↪ Link: https://github.com/my-org/billing-api/blob/HEAD/config.py#L42
     → Risk Score: 4
-
+```
 
 
 ---
