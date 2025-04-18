@@ -55,6 +55,7 @@ Enter target domain (e.g. example.com): example.com
     ↪ Link: https://github.com/my-org/billing-api/blob/HEAD/config.py#L42
     → Risk Score: 4
 ```
+![image](https://github.com/user-attachments/assets/1798d837-e774-4dc3-96de-6d974e69e0d5)
 
 
 ---
