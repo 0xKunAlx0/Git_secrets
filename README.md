@@ -25,7 +25,7 @@ This tool scans public repositories of a GitHub organization to detect **hardcod
 
 Install dependencies:
 
-```bash
+
 pip install -r requirements.txt
 
 
@@ -52,3 +52,18 @@ Enter target domain (e.g. example.com): example.com
     ↪ Line: 42
     ↪ Link: https://github.com/my-org/billing-api/blob/HEAD/config.py#L42
     → Risk Score: 4
+
+
+
+---
+
+## ✅`LICENSE`
+
+Use an open license. Most common is MIT:
+
+```
+MIT License
+
+Copyright (c) 2025 0xKunAlx0
+
+Permission is hereby granted, free of charge, to any person obtaining a copy...
