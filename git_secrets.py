@@ -8,11 +8,25 @@ HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"}
 
 SECRET_PATTERNS = {
     "AWS Access Key": r"AKIA[0-9A-Z]{16}",
+    "AWS Secret Key": r"(?i)aws(.{0,20})?(secret|private)?(.{0,20})?['\"][0-9a-zA-Z\/+]{40}['\"]",
     "Slack Token": r"xox[baprs]-[0-9a-zA-Z]{10,48}",
     "Google API Key": r"AIza[0-9A-Za-z\-_]{35}",
-    "Generic API Key": r"(?i)(api|apikey|access_token|auth_token)[\"'=:\s]+[\"']?[a-z0-9\-_]{16,45}[\"']?",
+    "Google OAuth Access Token": r"ya29\.[0-9A-Za-z\-_]+",
+    "GitHub Token": r"ghp_[0-9a-zA-Z]{36}",
+    "Heroku API Key": r"(?i)heroku(.{0,20})?['\"][0-9a-f]{32}['\"]",
     "JWT": r"eyJ[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+",
-    "S3 Bucket URL": r"https?://s3[\.-][a-z0-9-]+\.amazonaws\.com/[^\s\"']+"
+    "Generic API Key": r"(?i)(api|apikey|access_token|auth_token)[\"'=:\s]+[\"']?[a-z0-9\-_]{16,45}[\"']?",
+    "Private Key": r"-----BEGIN (RSA|DSA|EC|PGP|OPENSSH) PRIVATE KEY-----",
+    "SSH (Private) Key": r"ssh-rsa AAAA[0-9A-Za-z+/]+[=]{0,3}(?![A-Za-z0-9+/])",
+    "Facebook Access Token": r"EAACEdEose0cBA[0-9A-Za-z]+",
+    "Stripe API Key": r"sk_live_[0-9a-zA-Z]{24}",
+    "Stripe Secret": r"rk_live_[0-9a-zA-Z]{24}",
+    "Mailgun API Key": r"key-[0-9a-zA-Z]{32}",
+    "Twilio API Key": r"SK[0-9a-fA-F]{32}",
+    "SendGrid API Key": r"SG\.[a-zA-Z0-9_\-]{22,}\.[a-zA-Z0-9_\-]{22,}",
+    "S3 Bucket URL": r"https?://s3[\.-][a-z0-9-]+\.amazonaws\.com/[^\s\"']+",
+    "Hardcoded Password": r"[\"']?password[\"']?\s*[:=]\s*[\"'][^\"']+[\"']",
+    "DB Connection String": r"(mysql|postgres|mongodb|sqlsrv):\/\/[^\s]+"
 }
 
 
@@ -103,6 +117,9 @@ def main():
 
     print(f"[*] Total Number of Leaked Secrets detected: {total}")
 
-
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+    print("\n[✘] Scan aborted. Stay secure, hacker 🕶️")
+
