@@ -43,6 +43,7 @@ python github_secret_scanner.py
 
 Follow the prompt:
 Enter GitHub organization name: my-org
+
 Enter target domain (e.g. example.com): example.com
 
 ```
