@@ -121,5 +121,5 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-    print("\n[✘] Scan aborted. Stay secure, hacker 🕶️")
+        print("\n[✘] Scan aborted. Stay secure, hacker 🕶️")
 
